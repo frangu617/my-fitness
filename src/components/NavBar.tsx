@@ -27,7 +27,10 @@ export default function NavBar() {
           <div className="title" style={{ width: "30wv", height: "5rem" }}>
             <img src="./fitnessLogo.svg" alt="" style={{ height: "15rem" }} />
           </div>
-          <h2 className="outlined-text" style ={{ minWidth: "240px" }}> My Fitness</h2>
+          <h2 className="outlined-text" style={{ minWidth: "240px" }}>
+            {" "}
+            My Fitness
+          </h2>
           <div className="links" style={{ width: "70wv" }}>
             <NavLink to="/">
               <button>Home</button>
@@ -52,8 +55,10 @@ export default function NavBar() {
       ) : (
         <>
           <div className="title">
+            <NavLink to="/">
             <img src="./fitnessLogo.svg" alt="" style={{ height: "5rem" }} />
             <h6 className="outlined-text"> My Fitness</h6>
+            </NavLink>
           </div>
           <div className="links">
             <IconButton
@@ -66,13 +71,20 @@ export default function NavBar() {
             </IconButton>
             <Drawer
               anchor="left"
+              style={{ color: "rgb(0, 38, 61)" }}
               open={drawerOpen}
               onClose={toggleDrawer(false)}
             >
-              <List>
+              <List
+                style={{
+                  background:
+                    "linear-gradient(to bottom, #017eb0, #0dd4fc",
+                  height: "100vh",
+                }}                
+              >
                 <ListItem>
                   <NavLink to="/">
-                    <button>Home</button>
+                    <button onClick={toggleDrawer(false)}>Home</button>
                   </NavLink>
                 </ListItem>
                 <ListItem>
@@ -103,7 +115,6 @@ export default function NavBar() {
               </List>
             </Drawer>
           </div>
-          
         </>
       )}
     </nav>
