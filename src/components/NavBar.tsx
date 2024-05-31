@@ -1,64 +1,59 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useTheme, useMediaQuery, Drawer, List, ListItem, IconButton } from "@mui/material";
+import {
+  useTheme,
+  useMediaQuery,
+  Drawer,
+  List,
+  ListItem,
+  IconButton,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import "./NavBar.scss";
-export default function NavBar() {
+
+const NavBar: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const toggleDrawer =
-    (open: boolean | ((prevState: boolean) => boolean)) =>
-    (event: { type: string; key: string }) => {
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
         event.type === "keydown" &&
-        (event.key === "Tab" || event.key === "Shift")
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
       setDrawerOpen(open);
-    }
+    };
 
   return (
     <nav className="nav-bar">
       {!isMobile ? (
         <>
-          <div className="title" style={{ width: "30wv", height: "5rem" }}>
-            <img src="./fitnessLogo.svg" alt="" style={{ height: "15rem" }} />
+          <div className="title">
+            <img className="logo" src="./fitnessLogo.svg" alt="Fitness Logo" />
+
+            <h2 className="outlined-text">My Fitness</h2>
           </div>
-          <h2 className="outlined-text" style={{ minWidth: "240px" }}>
-            {" "}
-            My Fitness
-          </h2>
-          <div className="links" style={{ width: "70wv" }}>
+          <div className="links" style={{ width: "70vw" }}>
             <NavLink to="/">
               <button>Home</button>
             </NavLink>
             <NavLink to="/user">
               <button>User</button>
             </NavLink>
-            <NavLink to="/login">
-              <button>Login</button>
-            </NavLink>
-            <NavLink to="/logout">
-              <button>Logout</button>
-            </NavLink>
-            <NavLink to="/past-workout">
-              <button>Past Workouts</button>
-            </NavLink>
             <NavLink to="/today-workout">
-              <button>Today Workout</button>
+              <button>New Workout</button>
             </NavLink>
           </div>
         </>
       ) : (
         <>
           <div className="title">
-            <NavLink to="/">
-            <img src="./fitnessLogo.svg" alt="" style={{ height: "5rem" }} />
-            <h6 className="outlined-text"> My Fitness</h6>
-            </NavLink>
+            <img className="logo" src="./fitnessLogo.svg" alt="Fitness Logo" />
+
+            <h2 className="outlined-text">My Fitness</h2>
           </div>
           <div className="links">
             <IconButton
@@ -71,16 +66,14 @@ export default function NavBar() {
             </IconButton>
             <Drawer
               anchor="left"
-              style={{ color: "rgb(0, 38, 61)" }}
               open={drawerOpen}
               onClose={toggleDrawer(false)}
             >
               <List
                 style={{
-                  background:
-                    "linear-gradient(to bottom, #017eb0, #0dd4fc",
+                  background: "linear-gradient(to bottom, #017eb0, #0dd4fc)",
                   height: "100vh",
-                }}                
+                }}
               >
                 <ListItem>
                   <NavLink to="/">
@@ -89,27 +82,27 @@ export default function NavBar() {
                 </ListItem>
                 <ListItem>
                   <NavLink to="/user">
-                    <button>User</button>
+                    <button onClick={toggleDrawer(false)}>User</button>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink to="/login">
-                    <button>Login</button>
+                    <button onClick={toggleDrawer(false)}>Login</button>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink to="/logout">
-                    <button>Logout</button>
+                    <button onClick={toggleDrawer(false)}>Logout</button>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink to="/past-workout">
-                    <button>Past Workouts</button>
+                    <button onClick={toggleDrawer(false)}>Past Workouts</button>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink to="/today-workout">
-                    <button>Today Workout</button>
+                    <button onClick={toggleDrawer(false)}>Today Workout</button>
                   </NavLink>
                 </ListItem>
               </List>
@@ -119,4 +112,6 @@ export default function NavBar() {
       )}
     </nav>
   );
-}
+};
+
+export default NavBar;

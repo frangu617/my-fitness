@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import PastWorkout from "./components/PastWorkout";
 import TodayWorkout from "./components/TodayWorkout";
 import Logout from "./components/Logout";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/past-workout" element={<PastWorkout />} />
           <Route path="/today-workout" element={<TodayWorkout />} />
           <Route path="/nav-bar" element={<NavBar />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Container>
     </Router>

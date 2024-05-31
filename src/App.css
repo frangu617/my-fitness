@@ -6,7 +6,7 @@
 }
 
 .logo {
-  height: 6em;
+  height: 100%;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -35,8 +35,123 @@
 }
 .card {
   padding: 2em;
+  background-color: rgb(0, 38, 61);
+  color: #b17028;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 2em;
+  border: 3px solid #b17028;
+}
+.card h1 {
+  color: #fdfddb;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+button {
+  background-color: rgb(0, 38, 61);
+  color: #d59e41;
+  border-radius: 10px;
+  border-color: #d59e41;
+  padding: 10px;
+  margin-right: 4px;
+  box-shadow: darkslategray 0px 4px 2px 4px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom, #0dd4fc, #017eb0);
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #d59e41;
+  text-decoration: none;
+}
+.nav-bar .title {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  width: "10%";
+  max-height: 5rem;
+  display: flex;
+}
+.nav-bar .logo {
+  height: 6rem;
+}
+.nav-bar .outlined-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e8ba64;
+  text-shadow: -4px -4px 0 #000, 1px -1px 0 #000, -4px 4px 0 #000, 1px 1px 0 #000;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .nav-bar .outlined-text {
+    font-size: 32px;
+  }
+}
+.nav-bar .outlined-text:hover {
+  color: #d59e41;
+  text-shadow: -4px -4px 0 #000, 1px -1px 0 #000, -4px 4px 0 #000, 1px 1px 0 #000;
+}
+.nav-bar .links {
+  min-width: 290px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: start;
+}
+.nav-bar .links .link {
+  width: 100%;
+  text-decoration: none;
+}
+
+.signup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.signup label {
+  display: flex;
+  flex-direction: column;
+}
+.signup button {
+  grid-column: span 2;
+  justify-self: center;
+  padding: 0.5rem 2rem;
+  background-color: rgb(0, 38, 61);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.signup button:hover {
+  background-color: #005f8a;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.user .card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.user .card p {
+  margin: 0;
 }/*# sourceMappingURL=App.css.map */
