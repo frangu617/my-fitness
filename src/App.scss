@@ -66,6 +66,7 @@ button {
   padding: 10px;
   margin-right: 4px;
   box-shadow: darkslategray 0px 4px 2px 4px;
+  
 }
 
 .nav-bar {
@@ -146,11 +147,6 @@ button {
     grid-column: span 2;
     justify-self: center;
     padding: 0.5rem 2rem;
-    background-color: $bg-blue;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
 
     &:hover {
       background-color: #005f8a;
@@ -167,7 +163,7 @@ button {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    
+
     p {
       margin: 0;
     }

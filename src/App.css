@@ -131,11 +131,6 @@ button {
   grid-column: span 2;
   justify-self: center;
   padding: 0.5rem 2rem;
-  background-color: rgb(0, 38, 61);
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
 }
 .signup button:hover {
   background-color: #005f8a;
