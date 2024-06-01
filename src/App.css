@@ -41,6 +41,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 2em;
   border: 3px solid #b17028;
+  min-width: 50vw;
 }
 .card h1 {
   color: #fdfddb;
@@ -105,13 +106,16 @@ button {
   text-shadow: -4px -4px 0 #000, 1px -1px 0 #000, -4px 4px 0 #000, 1px 1px 0 #000;
 }
 .nav-bar .links {
-  min-width: 290px;
+  min-width: 3rem;
   max-width: -moz-fit-content;
   max-width: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: start;
+}
+.nav-bar .links button {
+  min-width: 105px;
 }
 .nav-bar .links .link {
   width: 100%;

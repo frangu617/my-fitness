@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface UserData {
   name: string;
@@ -57,7 +57,7 @@ export default function User() {
         <p>Name: </p>
         <p>{name}</p>
         <p>Weight:</p>
-        <p>{weight}</p>
+        <p>{weight} lbs</p>
         <p>Height:</p>
         <p>
           {heightFeet}'{heightInches}"

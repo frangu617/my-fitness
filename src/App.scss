@@ -48,6 +48,8 @@ $text-gold: #d59e41;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 2em;
   border: 3px solid $gold-dark;
+  min-width: 50vw;
+  
 
   h1 {
     color: $gold-lite;
@@ -102,13 +104,15 @@ button {
   }
 
   .links {
-    min-width: 290px;
+    min-width: 3rem;
     max-width: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: start;
-
+    button{
+      min-width: 105px;
+    }
 
     .link {
       width: 100%;

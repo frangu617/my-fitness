@@ -33,18 +33,20 @@ export default function SignUp() {
 
   function calculateDailyCalories(bmi: number, age: number, gender: string) {
     if (gender === "male") {
-      return (
-        10 * weight +
+      bmi = 10 * weight +
         6.25 * (heightFeet * 12 + heightInches) * 2.54 -
         5 * age +
         5
+      return (
+        bmi
       );
     } else if (gender === "female") {
-      return (
-        10 * weight +
+      bmi =  10 * weight +
         6.25 * (heightFeet * 12 + heightInches) * 2.54 -
         5 * age -
         161
+      return (
+       bmi
       );
     } else {
       return 0;
