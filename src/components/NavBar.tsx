@@ -61,6 +61,11 @@ const NavBar: React.FC = () => {
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer(true)}
+              style={{
+                width: "50%",
+                height: "50%",
+                borderRadius: "10px",
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -71,7 +76,8 @@ const NavBar: React.FC = () => {
             >
               <List
                 style={{
-                  background: "linear-gradient(to bottom, #017eb0, #0dd4fc)",
+                  background:
+                    "linear-gradient(to bottom, #017eb0, rgb(0, 38, 61))",
                   height: "100vh",
                 }}
               >

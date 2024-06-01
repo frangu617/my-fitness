@@ -79,9 +79,21 @@ button {
     width: "10%";
     max-height: 5rem;
     display: flex;
+
+    @media (max-width: 600px) {
+      justify-content: left;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
   }
   .logo {
     height: 6rem;
+    padding: 0;
   }
 
   .outlined-text {
@@ -110,6 +122,11 @@ button {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: start;
+    @media (max-width: 600px) {
+      // background: $bg-blue;
+      border-radius: 15px;
+      width: 30%;
+    }
     button{
       min-width: 105px;
     }

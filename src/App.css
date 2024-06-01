@@ -86,8 +86,20 @@ button {
   max-height: 5rem;
   display: flex;
 }
+@media (max-width: 600px) {
+  .nav-bar .title {
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+  }
+}
+.nav-bar .title h2 {
+  margin: 0;
+  padding: 0;
+}
 .nav-bar .logo {
   height: 6rem;
+  padding: 0;
 }
 .nav-bar .outlined-text {
   font-size: 48px;
@@ -113,6 +125,12 @@ button {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: start;
+}
+@media (max-width: 600px) {
+  .nav-bar .links {
+    border-radius: 15px;
+    width: 30%;
+  }
 }
 .nav-bar .links button {
   min-width: 105px;

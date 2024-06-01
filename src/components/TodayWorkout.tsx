@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function TodayWorkout() {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -17,7 +19,7 @@ export default function TodayWorkout() {
             <div className = "card">
                 <h2>Today's workout</h2>
                 <h4>{week[wday]} - {mm}/{dd}/{yyyy}</h4>
-                <button> Add Workout</button>       
+                <NavLink to = "/add-workout"><button> Add Workout</button></NavLink>       
                 </div>
         
     </div>    </>
