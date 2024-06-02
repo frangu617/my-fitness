@@ -23,7 +23,7 @@ export default function TodayWorkout() {
             {user === "Guest" ? (
                 <>
                 <h2>Welcome to Today's Workout</h2>
-                <p>To log a new workout, please <NavLink to="/sign-up"><button>Sign Up</button></NavLink></p>
+                <p>To log a new workout, please <NavLink to="/signup"><button>Sign Up</button></NavLink></p>
                 </> 
             ) : (
           <div className="newWorkout">

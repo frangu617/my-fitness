@@ -29,6 +29,7 @@ export default function SignUp() {
 
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log(`User data saved: ${JSON.stringify(userData)}`);
+    
   };
 
   function calculateDailyCalories(bmi: number, age: number, gender: string) {
@@ -108,7 +109,7 @@ export default function SignUp() {
           />
         </label>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>
     </div>
   );

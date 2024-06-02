@@ -32,7 +32,10 @@ export default function Home() {
             </p>
             <p>
               To maximize the benefits of this application, please{" "}
-              <NavLink to="/signup">register</NavLink>.
+              <NavLink to="/signup">
+                <button>Register</button>
+              </NavLink>
+              .
             </p>
           </>
         ) : (
@@ -43,7 +46,10 @@ export default function Home() {
             </p>
             <p>
               Are you looking to{" "}
-              <NavLink to="/today-workout"><button>start a new workout</button></NavLink>?
+              <NavLink to="/today-workout">
+                <button>start a new workout</button>
+              </NavLink>
+              ?
             </p>
             <p>
               or maybe just{" "}

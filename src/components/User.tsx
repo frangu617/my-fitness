@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 interface UserData {
   name: string;
@@ -62,35 +63,37 @@ export default function User() {
   } = userData;
 
   return (
-    <div className = "card">
+    <>
         {
           user !== "Guest" ? (
-       <div className="card">
-        <p>Name: </p>
-        <p>{name}</p>
-        <p>Weight:</p>
-        <p>{weight} lbs</p>
-        <p>Height:</p>
-        <p>
-          {heightFeet}'{heightInches}"
-        </p>
-        <p>Age:</p>
-        <p>{age}</p>
-        <p>Gender:</p>
-        <p>{gender}</p>
-        <p>BMI:</p>
-        <p>{bmi}</p>
-        <p>Daily Calories:</p>
-        <p>{dailyCalories}</p>
+       <div className="user">
+        <div className="card">
+          <strong>Name: </strong>
+          <p>{name}</p>
+          <strong>Weight:</strong>
+          <p>{weight} lbs</p>
+          <strong>Height:</strong>
+          <p>
+            {heightFeet}'{heightInches}"
+          </p>
+          <strong>Age:</strong>
+          <p>{age}</p>
+          <strong>Gender:</strong>
+          <p>{gender}</p>
+          <strong>BMI:</strong>
+          <p>{bmi}</p>
+          <strong>Daily Calories:</strong>
+          <p>{dailyCalories}</p>
+        </div>
        </div>
           ) : (
             <div style={{ display : "flex", flexDirection : "column", justifyContent : "center"}}>
               <h2>Welcome Guest</h2>
-              <p>Please {" "}<button>sign up</button></p>
-              <p>to get started</p>
+              <p>Please {" "}<NavLink to="/sign   up"><button>Sign Up</button></NavLink>
+              {" "}to get started</p>
             </div>
           )
         }
-    </div>
+    </>
   );
 }
