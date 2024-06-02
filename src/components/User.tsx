@@ -23,6 +23,16 @@ export default function User() {
     dailyCalories: 0,
   });
 
+   const [user, setUser] = useState("Guest");
+
+   useEffect(() => {
+     const storedUserData = localStorage.getItem("userData");
+     if (storedUserData) {
+       const parsedUserData = JSON.parse(storedUserData);
+       setUser(parsedUserData.name || "Guest");
+     }
+   }, []);
+
   useEffect(() => {
     const storedUserData = localStorage.getItem("userData");
     if (storedUserData) {
@@ -52,8 +62,10 @@ export default function User() {
   } = userData;
 
   return (
-    <div className="user">
-      <div className="card">
+    <div className = "card">
+        {
+          user !== "Guest" ? (
+       <div className="card">
         <p>Name: </p>
         <p>{name}</p>
         <p>Weight:</p>
@@ -70,7 +82,15 @@ export default function User() {
         <p>{bmi}</p>
         <p>Daily Calories:</p>
         <p>{dailyCalories}</p>
-      </div>
+       </div>
+          ) : (
+            <div style={{ display : "flex", flexDirection : "column", justifyContent : "center"}}>
+              <h2>Welcome Guest</h2>
+              <p>Please {" "}<button>sign up</button></p>
+              <p>to get started</p>
+            </div>
+          )
+        }
     </div>
   );
 }
