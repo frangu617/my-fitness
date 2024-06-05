@@ -77,6 +77,7 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #d59e41;
   text-decoration: none;
+  max-height: 10vh;
 }
 .nav-bar .title {
   color: black;
@@ -162,7 +163,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .user .card {
   display: grid;
@@ -171,4 +171,27 @@ button {
 }
 .user .card p {
   margin: 0;
+}
+
+.newWorkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.newWorkout .newWorkoutForm {
+  grid-column: span 2;
+}
+.newWorkout .table-container {
+  grid-column: span 2;
+  width: 100%;
+  border-collapse: collapse;
+}
+.newWorkout .table-container th,
+.newWorkout .table-container td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+.newWorkout .table-container th {
+  background-color: #f2f2f2;
 }/*# sourceMappingURL=App.css.map */

@@ -49,7 +49,6 @@ $text-gold: #d59e41;
   margin: 2em;
   border: 3px solid $gold-dark;
   min-width: 50vw;
-  
 
   h1 {
     color: $gold-lite;
@@ -68,7 +67,6 @@ button {
   padding: 10px;
   margin-right: 4px;
   box-shadow: darkslategray 0px 4px 2px 4px;
-  
 }
 
 .nav-bar {
@@ -127,7 +125,7 @@ button {
       border-radius: 15px;
       width: 30%;
     }
-    button{
+    button {
       min-width: 105px;
     }
 
@@ -152,6 +150,7 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: $text-gold;
   text-decoration: none;
+  max-height: 10vh;
 }
 
 .signup {
@@ -179,7 +178,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   .card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -187,6 +185,29 @@ button {
 
     p {
       margin: 0;
+    }
+  }
+}
+
+.newWorkout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  .newWorkoutForm {
+    grid-column: span 2;
+  }
+  .table-container {
+    grid-column: span 2;
+    width: 100%;
+    border-collapse: collapse;
+    th,
+    td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
     }
   }
 }

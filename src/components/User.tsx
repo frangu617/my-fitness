@@ -64,45 +64,47 @@ export default function User() {
 
   return (
     <>
-      {user !== "Guest" ? (
-        <div className="user">
-          <div className="card">
-            <strong>Name: </strong>
-            <p>{name}</p>
-            <strong>Weight:</strong>
-            <p>{weight} lbs</p>
-            <strong>Height:</strong>
-            <p>
-              {heightFeet}'{heightInches}"
-            </p>
-            <strong>Age:</strong>
-            <p>{age}</p>
-            <strong>Gender:</strong>
-            <p>{gender}</p>
-            <strong>BMI:</strong>
-            <p>{bmi}</p>
-            <strong>Daily Calories:</strong>
-            <p>{dailyCalories}</p>
+      <div className="card">
+        {user !== "Guest" ? (
+          <div className="user">
+            <div className="card">
+              <strong>Name: </strong>
+              <p>{name}</p>
+              <strong>Weight:</strong>
+              <p>{weight} lbs</p>
+              <strong>Height:</strong>
+              <p>
+                {heightFeet}'{heightInches}"
+              </p>
+              <strong>Age:</strong>
+              <p>{age}</p>
+              <strong>Gender:</strong>
+              <p>{gender}</p>
+              <strong>BMI:</strong>
+              <p>{bmi}</p>
+              <strong>Daily Calories:</strong>
+              <p>{dailyCalories}</p>
+            </div>
           </div>
-        </div>
-      ) : (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <h2>Welcome Guest</h2>
-          <p>
-            Please{" "}
-            <NavLink to="/sign   up">
-              <button>Sign Up</button>
-            </NavLink>{" "}
-            to get started
-          </p>
-        </div>
-      )}
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <h2>Welcome Guest</h2>
+            <p>
+              Please{" "}
+              <NavLink to="/sign   up">
+                <button>Sign Up</button>
+              </NavLink>{" "}
+              to get started
+            </p>
+          </div>
+        )}
+      </div>
     </>
   );
 }
