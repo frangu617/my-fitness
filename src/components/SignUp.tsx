@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SignUp() {
@@ -8,6 +9,8 @@ export default function SignUp() {
   const [heightInches, setHeightInches] = useState(0);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -29,6 +32,7 @@ export default function SignUp() {
 
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log(`User data saved: ${JSON.stringify(userData)}`);
+    navigate("/");
     
   };
 
@@ -56,61 +60,64 @@ export default function SignUp() {
 
   return (
     <div className="card">
-      <form onSubmit={handleSubmit} className="signup">
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </label>
-        <label>
-          Gender:
-          <select
-            value={gender}
-            onChange={(event) => setGender(event.target.value)}
-          >
-            <option value="">Select</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="non-binary">Non-binary</option>
-          </select>
-        </label>
-        <label>
-          Weight (lbs):
-          <input
-            type="number"
-            value={weight}
-            onChange={(event) => setWeight(parseInt(event.target.value))}
-          />
-        </label>
-        <label>
-          Height (feet and inches):
-          <input
-            type="number"
-            value={heightFeet}
-            placeholder="feet"
-            onChange={(event) => setHeightFeet(parseInt(event.target.value))}
-          />
-          <input
-            type="number"
-            value={heightInches}
-            placeholder="inches"
-            onChange={(event) => setHeightInches(parseInt(event.target.value))}
-          />
-        </label>
-        <label>
-          Age:
-          <input
-            type="number"
-            value={age}
-            onChange={(event) => setAge(parseInt(event.target.value))}
-          />
-        </label>
-
-        <button type="submit" onClick={handleSubmit}>Submit</button>
-      </form>
-    </div>
-  );
+      
+      <div className="card">
+        <form onSubmit={handleSubmit} className="signup">
+          <label>
+            Name:
+            <input
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </label>
+          <label>
+            Gender:
+            <select
+              value={gender}
+              onChange={(event) => setGender(event.target.value)}
+            >
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="non-binary">Non-binary</option>
+            </select>
+          </label>
+          <label>
+            Weight (lbs):
+            <input
+              type="number"
+              value={weight}
+              onChange={(event) => setWeight(parseInt(event.target.value))}
+            />
+          </label>
+          <label>
+            Height (feet and inches):
+            <input
+              type="number"
+              value={heightFeet}
+              placeholder="feet"
+              onChange={(event) => setHeightFeet(parseInt(event.target.value))}
+            />
+            <input
+              type="number"
+              value={heightInches}
+              placeholder="inches"
+              onChange={(event) => setHeightInches(parseInt(event.target.value))}
+            />
+          </label>
+          <label>
+            Age:
+            <input
+              type="number"
+              value={age}
+              onChange={(event) => setAge(parseInt(event.target.value))}
+            />
+          </label>
+  
+          <button type="submit" onClick={handleSubmit}>Submit</button>
+        </form>
+      </div>
+  
+    </div>  );
 }
